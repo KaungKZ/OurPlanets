@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  // background: white;
+  background: url(../src/assets/figmaBackground.png);
+  background-size: cover;
+  // background-repeat: no-repeat;
+}
+
+// #container {
+//   .navbar .navbar-nav .nav-link,
+//   .navbar .navbar-brand {
+//     color: #fff;
+//   }
+// }
+
+.navbar {
+  .nav-item {
+    padding: 0px 2px;
+  }
+  .navbar-brand {
+    font-family: $title-font;
+  }
+
+  .navbar-nav .nav-link {
+    font-family: $title-font-secondary;
+    position: relative;
+
+    &.active {
+      &::before {
+        content: "";
+        position: absolute;
+        top: -1.5rem;
+        left: 0;
+        height: 6px;
+        width: 100%;
+        background: $primary-color-blue;
+        // background: #6d2ed5;
+        transition: all 400ms;
+        transform-origin: 50% 50%;
+        transform: scaleX(1);
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: -1.5rem;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      background: $primary-color-blue;
+      // background: #6d2ed5;
+      transition: all 400ms;
+      transform-origin: 50% 50%;
+      transform: scaleX(0);
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+      // width: 100%;
+      // display: none;
+    }
+  }
+}
+
+.nav-divider {
+  // border-top: 1px solid #fff;
+  width: 100%;
+  height: 2px;
+  background: rgba(45, 102, 240, 0.2);
+  display: block;
+  // background: #fff;
+  margin: 0;
+}
+
+.planet-summary {
+  margin: 80px auto 100px auto;
+  .row {
+    min-height: 550px;
+  }
+  &__title {
+    font-family: $title-font;
+  }
+
+  &__img {
+    img {
+      width: 450px;
+      height: 450px;
+      object-fit: cover;
+    }
+  }
+
+  &__source,
+  &__options,
+  &__content {
+    font-family: $title-font-secondary;
+  }
+
+  &__content {
+    color: $light-text-color;
+  }
+
+  .btn-check:focus + .btn-outline-primary,
+  .btn-outline-primary:focus,
+  .btn-check:checked + .btn-outline-primary:focus,
+  .btn-check:active + .btn-outline-primary:focus,
+  .btn-outline-primary:active:focus,
+  .btn-outline-primary.active:focus,
+  .btn-outline-primary.dropdown-toggle.show:focus,
+  .btn-check:focus + .btn,
+  .btn:focus {
+    box-shadow: none;
+  }
+  .btn-option {
+    &.active {
+      // background: $primary-color-blue;
+      font-weight: 700;
+    }
+
+    &:not(.active) {
+      border: 1px solid #38384f;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1) !important;
+      }
+    }
+  }
+}
+
+.planet-detail {
+  &__wrapper {
+    border: 1px solid rgba(45, 102, 240, 0.2);
+    min-height: 100px;
+    // border: ;
+  }
+
+  &__title {
+    color: #bbbbbb;
+    font-family: $title-font-secondary;
+    font-size: 14px;
+  }
+
+  &__value {
+    font-family: $title-font;
+
+    color: $light-text-color;
+  }
+}
+
+@media (max-width: 1200px) {
+  .planet-summary {
+    &__img img {
+      width: 400px;
+      height: 400px;
+    }
+  }
+}
