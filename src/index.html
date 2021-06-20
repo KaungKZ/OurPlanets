@@ -23,30 +23,54 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="collapse navbar-collapse mt-3" id="navbarToggle">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
+                <span class="hidden-lg nav-link-icon"
+                  ><img src="../assets/planet-mercury.svg" alt="planet-mercury"
+                /></span>
                 <a href="#" class="nav-link">Mercury</a>
               </li>
               <li class="nav-item">
+                <span class="hidden-lg nav-link-icon"
+                  ><img src="../assets/planet-venus.svg" alt="planet-venus"
+                /></span>
                 <a href="#" class="nav-link">Venus</a>
               </li>
               <li class="nav-item">
+                <span class="hidden-lg nav-link-icon"
+                  ><img src="../assets/planet-earth.svg" alt="planet-earth"
+                /></span>
                 <a href="#" class="nav-link active">Earth</a>
               </li>
               <li class="nav-item">
+                <span class="hidden-lg nav-link-icon"
+                  ><img src="../assets/planet-mars.svg" alt="planet-mars"
+                /></span>
                 <a href="#" class="nav-link">Mars</a>
               </li>
               <li class="nav-item">
+                <span class="hidden-lg nav-link-icon"
+                  ><img src="../assets/planet-jupiter.svg" alt="planet-jupiter"
+                /></span>
                 <a href="#" class="nav-link">Jupiter</a>
               </li>
               <li class="nav-item">
+                <span class="hidden-lg nav-link-icon"
+                  ><img src="../assets/planet-saturn.svg" alt="planet-saturn"
+                /></span>
                 <a href="#" class="nav-link">Saturn</a>
               </li>
               <li class="nav-item">
+                <span class="hidden-lg nav-link-icon"
+                  ><img src="../assets/planet-uranus.svg" alt="planet-uranus"
+                /></span>
                 <a href="#" class="nav-link">Uranus</a>
               </li>
               <li class="nav-item">
+                <span class="hidden-lg nav-link-icon"
+                  ><img src="../assets/planet-neptune.svg" alt="planet-neptune"
+                /></span>
                 <a href="#" class="nav-link">Neptune</a>
               </li>
               <!-- <li class="nav-item">
@@ -67,60 +91,64 @@
     <div class="loader">
       <span class="skeleton-loader"></span>
     </div> -->
-    <div class="container planet-summary">
-      <div class="row">
-        <div class="col-lg-6 d-flex align-items-center">
-          <img
-            src="../assets/planet-earth.svg"
-            class="planet-summary__img"
-            id="sup"
-          />
-        </div>
-        <div class="col-lg-6 d-flex flex-column justify-content-between">
-          <h1 class="text-light planet-summary__title display-3 fw-bold mb-3">
-            EARTH
-          </h1>
-          <p class="lead fs-6 planet-summary__content"></p>
-          <div class="planet-summary__source mb-4">
-            <span class="text-light"
-              >Source:
-              <a
-                href="#"
-                class="link-primary ms-2 planet-summary__source-link"
-                target="_blank"
-              >
-                Wikipedia
-                <img
-                  src="../assets/icon-source.svg"
-                  alt="icon-source"
-                  class="ms-2 mb-1"
-                /> </a
-            ></span>
-          </div>
+    <div class="planet-summary-wrapper">
+      <div class="container planet-summary">
+        <div class="row">
           <div
-            class="d-grid gap-3 planet-summary__options btn-group w-75"
-            role="group"
-            aria-label="Basic example"
+            class="col-lg-6 d-flex align-items-center planet-summary__img-wrapper"
           >
-            <button
-              type="button"
-              class="btn btn-outline-primary btn-lg btn-option text-light text-start px-5 py-3 fs-6 active"
+            <img
+              src="../assets/planet-earth.svg"
+              class="planet-summary__img"
+              id="sup"
+            />
+          </div>
+          <div class="col-lg-6 d-flex flex-column justify-content-between">
+            <h1 class="text-light planet-summary__title display-3 fw-bold mb-3">
+              EARTH
+            </h1>
+            <p class="lead fs-6 planet-summary__content"></p>
+            <div class="planet-summary__source mb-4">
+              <span class="text-light"
+                >Source:
+                <a
+                  href="#"
+                  class="link-primary ms-2 planet-summary__source-link"
+                  target="_blank"
+                >
+                  Wikipedia
+                  <img
+                    src="../assets/icon-source.svg"
+                    alt="icon-source"
+                    class="ms-2 mb-1"
+                  /> </a
+              ></span>
+            </div>
+            <div
+              class="d-grid gap-3 planet-summary__options btn-group w-75"
+              role="group"
+              aria-label="Basic example"
             >
-              01: Overview
-            </button>
+              <button
+                type="button"
+                class="btn btn-outline-primary btn-lg btn-option text-light text-start px-5 py-3 fs-6 active"
+              >
+                01: Overview
+              </button>
 
-            <button
-              type="button"
-              class="btn btn-outline-primary btn-lg btn-option text-light text-start px-5 py-3 fs-6"
-            >
-              02: Internal Structure
-            </button>
-            <button
-              type="button"
-              class="btn btn-outline-primary btn-lg btn-option text-light text-start px-5 py-3 fs-6"
-            >
-              03: Atmosphere
-            </button>
+              <button
+                type="button"
+                class="btn btn-outline-primary btn-lg btn-option text-light text-start px-5 py-3 fs-6"
+              >
+                02: Internal Structure
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-primary btn-lg btn-option text-light text-start px-5 py-3 fs-6"
+              >
+                03: Atmosphere
+              </button>
+            </div>
           </div>
         </div>
       </div>

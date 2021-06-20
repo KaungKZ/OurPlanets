@@ -243,6 +243,18 @@ function handleClickAtmosphereOption(_currentPlanet) {
       : planetValues.Atmosphere;
 }
 
+function handleResizeDocument() {
+  if (window.innerWidth < 768) {
+    optionButtons.forEach((btn) => {
+      btn.innerHTML = btn.innerHTML.split(":")[1];
+    });
+  }
+}
+
+(function initForCss() {
+  return handleResizeDocument();
+})();
+
 navLinks.forEach((v) => {
   v.addEventListener("click", () => handleClickNavLink(v));
 });
@@ -250,3 +262,5 @@ navLinks.forEach((v) => {
 optionButtons.forEach((v) => {
   v.addEventListener("click", () => handleChangeOption(v));
 });
+
+document.addEventListener("resize", handleResizeDocument);
