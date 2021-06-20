@@ -5,20 +5,17 @@ import svgImages from "../assets/*.svg";
 const optionButtons = document.querySelectorAll(".btn-option");
 const planetDetail = document.querySelectorAll(".planet-detail__value");
 const planetSummaryContent = document.querySelector(".planet-summary__content");
-const planetSummarySource = document.querySelector(".planet-summary__source");
+const planetSummarySource = document.querySelector(
+  ".planet-summary__source-link"
+);
 const planetSummaryTitle = document.querySelector(".planet-summary__title");
 const navLinks = document.querySelectorAll(".nav-link");
 const planetImage = document.querySelector(".planet-summary__img");
 const planetSummarySection = document.querySelector(".planet-summary");
+const loaders = document.querySelectorAll(".loader");
+
 // let isLoading = true;
 
-// console.log(svgImages);
-
-// console.log(foo);
-
-// const planetSummaryUrl = [
-//   "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&titles=Jupiter&formatversion=2&exsentences=10&exlimit=1&explaintext=1",
-// ];
 // const planetDetailUrl =
 //   "https://api.le-systeme-solaire.net/rest.php/bodies/earth";
 const initialActiveLink = "Earth";
@@ -44,25 +41,8 @@ const colors = {
   Neptune: "rgba(45, 104, 240, 1)",
 };
 
-// document.querySelector(".planet-summary__img").src =
-//   "../assets/planet-earth.svg";
-
-// window.onload = function () {
-//   document.getElementById("sup").src = require("../assets/planet-earth.svg");
-//   // document.getElementById("img2").src="screenshot.png";
-// };
-
 handleClickNavLink(getInitialActiveLink);
 function changeContentByPlanet(planet, v) {
-  // console.log(images[`planet${planet}`]);
-
-  // planet = planet.toLowerCase();
-  // console.log(planetImage);
-
-  // planetImage.src = require(images[`planet${planet}`]);
-  // planetImage.src = svgImages[`planet-${planet.toLowerCase()}`];
-
-  // console.log(images[`planet${planet}`]);
   optionButtons.forEach((btn) => {
     btn.style.backgroundColor = "transparent";
 
@@ -72,30 +52,11 @@ function changeContentByPlanet(planet, v) {
     }
   });
 
-  // v.style.backgroundColor = `${colors[planet]}`;
-
   planetSummaryTitle.innerHTML = planet;
 }
 
-// function changePlanetImageByOption(value) {
-//   // let planet = 'overview'
-//   value = value.toLowerCase();
-//   let _currentPlanet = currentPlanet.toLowerCase();
-//   console.log(value);
-//   let _imgName =
-//     value === "overview"
-//       ? `planet-${_currentPlanet}`
-//       : value === "internalstructure"
-//       ? `planet-${_currentPlanet}-internal`
-//       : `planet-${_currentPlanet}-atmosphere`;
-
-//   // console.log(_imgName);
-//   planetImage.src = svgImages[_imgName];
-// }
-
 function toggleActiveNavLink(v) {
   navLinks.forEach((v) => {
-    // console.log(v);
     v.classList.remove("active");
   });
 
@@ -103,30 +64,23 @@ function toggleActiveNavLink(v) {
 }
 
 function handleClickNavLink(v) {
-  // planetSummarySection.style.display = "none";
+  planetSummarySection.style.display = "none";
 
   let planet = v.innerHTML;
-
-  // console.log(currentOption);
 
   currentPlanet = planet;
 
   let _planet = planet === "Mercury" ? "Mercury_(planet)" : planet;
 
   toggleActiveNavLink(v);
-  // let _sectionIndex;
-  fetch(
-    // step 1 : get the sections of specifi page (title)
 
-    `https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=${_planet}&prop=sections&disabletoc=1` // fetch sections
+  fetch(
+    `https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=${_planet}&prop=sections&disabletoc=1` // fetch sections to get indexes
   )
     .then((data) => {
       return data.json();
     })
     .then((data) => {
-      // console.log(data);
-      // step 2 : get the index and fetch from another url and get the content
-      // console.log(data.parse.sections);
       let _internalStructureIndex = data.parse.sections.find((one) =>
         one.line.toLowerCase().includes("internal")
       ).index;
@@ -138,10 +92,10 @@ function handleClickNavLink(v) {
       ).index;
 
       const urls = [
-        `https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=extracts&generator=search&formatversion=2&exsentences=3&exlimit=1&exintro=1&explaintext=1&gsrsearch=intitle:planet%20${_planet}&gsrlimit=1`,
+        `https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=info|extracts&inprop=url&generator=search&formatversion=2&exsentences=3&exlimit=1&exintro=1&explaintext=1&gsrsearch=intitle:planet%20${_planet}&gsrlimit=1`,
         `https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=${_planet}&prop=wikitext&section=${_internalStructureIndex}&disabletoc=1`,
         `https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=${_planet}&prop=wikitext&section=${_atmosphereIndex}&disabletoc=1`,
-        // `https://api.le-systeme-solaire.net/rest.php/bodies/${_planet}`,
+        `https://api.le-systeme-solaire.net/rest.php/bodies/${planet}`,
       ];
 
       const requests = urls.map((url) => fetch(url));
@@ -152,11 +106,9 @@ function handleClickNavLink(v) {
       return Promise.all(res.map((r) => r.json()));
     })
     .then((data) => {
-      // console.log(data);
+      console.log(data);
+      // console.log(data[3]);
 
-      // let text = Object.values(data[1].parse.wikitext);
-
-      // console.log(text[0]);
       const summary = data[0].query.pages[0].extract;
 
       const internalStructureText = wtf(
@@ -166,26 +118,74 @@ function handleClickNavLink(v) {
       const atmosphereText = wtf(
         Object.values(data[2].parse.wikitext)[0]
       ).text();
-      // isLoading = false;
-      // planetSummarySection.style.display = "block";
+
+      loaders.forEach((loader) => {
+        loader.classList.add("remove");
+      });
+      planetSummarySource.href = data[0].query.pages[0].fullurl;
+      planetSummarySection.style.display = "block";
 
       planetValues.Summary = summary;
       planetValues.InternalStructure = internalStructureText;
       planetValues.Atmosphere = atmosphereText;
 
-      // console.log(planetValues, currentOption);
+      changePlanetDetailByPlanet(data[3]);
 
       checkWhichOptionClicked(currentOption);
       changeContentByPlanet(planet, v);
-
-      // planetSummaryContent.innerHTML = planetValues[currentOption];
-
-      //
-      // const text = htmlToText(Object.values(data.parse.text));
-
-      // console.log(text);
     })
     .catch((err) => console.log(err));
+}
+
+function changePlanetDetailByPlanet(data) {
+  // const allowed = ["aphelion", "sideralRotation", "avgTemp", "meanRadius"];
+
+  // console.log(data.sideralRotation);
+
+  data.sideralRotation = Math.abs(data.sideralRotation);
+
+  let values = [
+    data.aphelion > 1000000000
+      ? `${(data.aphelion / 1000000000).toFixed(2)} bil km`
+      : `${(data.aphelion / 1000000).toFixed(1)}mil km`,
+    `${Math.floor(data.sideralRotation / 24)}d ${Math.floor(
+      data.sideralRotation % 24
+    )}hr ${Math.floor(
+      60 * ((data.sideralRotation % 24) - Math.floor(data.sideralRotation % 24))
+    )}m`,
+    `${data.avgTemp - 273.5} &deg;C`,
+
+    `${data.meanRadius.toFixed(1).toLocaleString()} KM`,
+  ];
+
+  // var hours = Math.floor(num / 60);
+  // var minutes = num % 60;
+  // return hours + ":" + minutes;
+
+  // const awayFromSun = `${data.aphelion / 10000000} million km`;
+  // const avgTemp = data.avgTemp;
+  // const rotationTime = data.sideralRotation;
+  // const size = data.meanRadius;
+
+  //  K - 273.15 = C
+
+  // const filteredValues = Object.keys(data)
+  //   .filter((key) => allowed.includes(key))
+  //   .reduce((obj, key) => {
+  //     obj[key] = data[key];
+  //     return obj;
+  //   }, {});
+
+  // console.log(filteredValues[0]);
+
+  // console.log(rotationTime);
+
+  // const [awayFromSun, rotationtime, avgTemp, size] = data;
+
+  // awayFromSun;
+  planetDetail.forEach((detail, i) => {
+    detail.innerHTML = values[i];
+  });
 }
 
 function toggleActiveOptionBtn(v) {
@@ -196,23 +196,13 @@ function toggleActiveOptionBtn(v) {
   v.classList.add("active");
 }
 
-// (function loadingIndicator() {
-//   if (isLoading) {
-//     planetSummarySection.style.display = "none";
-//   } else {
-//     planetSummarySection.style.display = "block";
-//   }
-// })();
-
 function handleChangeOption(v) {
   let value = v.innerHTML;
 
   currentOption = value.split(": ")[1].replace(/\s/g, "");
 
-  // console.log(v);
   toggleActiveOptionBtn(v);
   changeContentByPlanet(currentPlanet, v);
-  // changePlanetImageByOption(currentOption);
 
   checkWhichOptionClicked(currentOption);
 }
@@ -220,24 +210,12 @@ function handleChangeOption(v) {
 function checkWhichOptionClicked(value) {
   value = value.toLowerCase();
   let _currentPlanet = currentPlanet.toLowerCase();
-  // console.log(value);
-  // let _imgName;
-  // value === "overview"
-  //   ? `planet-${_currentPlanet}`
-  //   : value === "internalstructure"
-  //   ? `planet-${_currentPlanet}-internal`
-  //   : `planet-${_currentPlanet}-atmosphere`;
 
-  // console.log(_imgName);
   if (value === "overview") {
-    // _imgName = `planet-${_currentPlanet}`;
     handleClickOverviewOption(_currentPlanet);
   } else if (value === "internalstructure") {
-    // _imgName = `planet-${_currentPlanet}-internal`;
     handleClickInternalOption(_currentPlanet);
   } else {
-    // _imgName = `planet-${_currentPlanet}-atmosphere`;
-    // console.log("xi");
     handleClickAtmosphereOption(_currentPlanet);
   }
 }
@@ -248,7 +226,7 @@ function handleClickOverviewOption(_currentPlanet) {
 }
 
 function handleClickInternalOption(_currentPlanet) {
-  console.log("internal");
+  // console.log("internal");
   planetImage.src = svgImages[`planet-${_currentPlanet}-internal`];
   planetSummaryContent.innerHTML =
     planetValues.InternalStructure.length > 350
@@ -257,14 +235,12 @@ function handleClickInternalOption(_currentPlanet) {
 }
 
 function handleClickAtmosphereOption(_currentPlanet) {
-  // console.log(planetValues);
+  // console.log("atmosphere");
   planetImage.src = svgImages[`planet-${_currentPlanet}-atmosphere`];
   planetSummaryContent.innerHTML =
     planetValues.Atmosphere.length > 350
       ? planetValues.Atmosphere.substring(0, 350).concat(" ...")
       : planetValues.Atmosphere;
-
-  // planetSummaryContent.innerHTML = planetValues.atmosphere;
 }
 
 navLinks.forEach((v) => {
@@ -274,7 +250,3 @@ navLinks.forEach((v) => {
 optionButtons.forEach((v) => {
   v.addEventListener("click", () => handleChangeOption(v));
 });
-
-// function displayEarth() {}
-
-// function displayJupiter () {}

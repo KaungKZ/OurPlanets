@@ -18081,70 +18081,91 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   var src = wtf;
   return src;
 });
-},{"process":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../assets/background-stars.svg":[function(require,module,exports) {
-module.exports = "/background-stars.896c19b7.svg";
-},{}],"../assets/icon-chevron.svg":[function(require,module,exports) {
+},{"process":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../assets/icon-chevron.svg":[function(require,module,exports) {
 module.exports = "/icon-chevron.6a58cf62.svg";
 },{}],"../assets/icon-hamburger.svg":[function(require,module,exports) {
 module.exports = "/icon-hamburger.22461109.svg";
 },{}],"../assets/icon-source.svg":[function(require,module,exports) {
 module.exports = "/icon-source.1426cf6d.svg";
+},{}],"../assets/planet-earth-atmosphere.svg":[function(require,module,exports) {
+module.exports = "/planet-earth-atmosphere.f3aad5dd.svg";
 },{}],"../assets/planet-earth-internal.svg":[function(require,module,exports) {
 module.exports = "/planet-earth-internal.7443e0a1.svg";
 },{}],"../assets/planet-earth.svg":[function(require,module,exports) {
 module.exports = "/planet-earth.9997cbe3.svg";
+},{}],"../assets/planet-jupiter-atmosphere.svg":[function(require,module,exports) {
+module.exports = "/planet-jupiter-atmosphere.726d7bd6.svg";
 },{}],"../assets/planet-jupiter-internal.svg":[function(require,module,exports) {
 module.exports = "/planet-jupiter-internal.01ddbee7.svg";
 },{}],"../assets/planet-jupiter.svg":[function(require,module,exports) {
 module.exports = "/planet-jupiter.3271910b.svg";
+},{}],"../assets/planet-mars-atmosphere.svg":[function(require,module,exports) {
+module.exports = "/planet-mars-atmosphere.865165ac.svg";
 },{}],"../assets/planet-mars-internal.svg":[function(require,module,exports) {
 module.exports = "/planet-mars-internal.5c68b70b.svg";
-},{}],"../assets/planet-mercury-internal.svg":[function(require,module,exports) {
-module.exports = "/planet-mercury-internal.b863a259.svg";
 },{}],"../assets/planet-mars.svg":[function(require,module,exports) {
 module.exports = "/planet-mars.9a367409.svg";
+},{}],"../assets/planet-mercury-atmosphere.svg":[function(require,module,exports) {
+module.exports = "/planet-mercury-atmosphere.5e38a157.svg";
+},{}],"../assets/planet-mercury-internal.svg":[function(require,module,exports) {
+module.exports = "/planet-mercury-internal.b863a259.svg";
 },{}],"../assets/planet-mercury.svg":[function(require,module,exports) {
 module.exports = "/planet-mercury.c3bda687.svg";
+},{}],"../assets/planet-neptune-atmosphere.svg":[function(require,module,exports) {
+module.exports = "/planet-neptune-atmosphere.19b5ea83.svg";
 },{}],"../assets/planet-neptune-internal.svg":[function(require,module,exports) {
 module.exports = "/planet-neptune-internal.2479d561.svg";
 },{}],"../assets/planet-neptune.svg":[function(require,module,exports) {
 module.exports = "/planet-neptune.83cfdeaf.svg";
+},{}],"../assets/planet-saturn-atmosphere.svg":[function(require,module,exports) {
+module.exports = "/planet-saturn-atmosphere.88af81bf.svg";
 },{}],"../assets/planet-saturn-internal.svg":[function(require,module,exports) {
 module.exports = "/planet-saturn-internal.a2c572de.svg";
 },{}],"../assets/planet-saturn.svg":[function(require,module,exports) {
 module.exports = "/planet-saturn.ee3b416a.svg";
+},{}],"../assets/planet-uranus-atmosphere.svg":[function(require,module,exports) {
+module.exports = "/planet-uranus-atmosphere.6d5519bf.svg";
 },{}],"../assets/planet-uranus-internal.svg":[function(require,module,exports) {
 module.exports = "/planet-uranus-internal.3fdfe820.svg";
 },{}],"../assets/planet-uranus.svg":[function(require,module,exports) {
 module.exports = "/planet-uranus.2c56909d.svg";
+},{}],"../assets/planet-venus-atmosphere.svg":[function(require,module,exports) {
+module.exports = "/planet-venus-atmosphere.19bc1530.svg";
 },{}],"../assets/planet-venus-internal.svg":[function(require,module,exports) {
 module.exports = "/planet-venus-internal.070667b6.svg";
 },{}],"../assets/planet-venus.svg":[function(require,module,exports) {
 module.exports = "/planet-venus.fab210c3.svg";
 },{}],"../assets/*.svg":[function(require,module,exports) {
 module.exports = {
-  "background-stars": require("./background-stars.svg"),
   "icon-chevron": require("./icon-chevron.svg"),
   "icon-hamburger": require("./icon-hamburger.svg"),
   "icon-source": require("./icon-source.svg"),
+  "planet-earth-atmosphere": require("./planet-earth-atmosphere.svg"),
   "planet-earth-internal": require("./planet-earth-internal.svg"),
   "planet-earth": require("./planet-earth.svg"),
+  "planet-jupiter-atmosphere": require("./planet-jupiter-atmosphere.svg"),
   "planet-jupiter-internal": require("./planet-jupiter-internal.svg"),
   "planet-jupiter": require("./planet-jupiter.svg"),
+  "planet-mars-atmosphere": require("./planet-mars-atmosphere.svg"),
   "planet-mars-internal": require("./planet-mars-internal.svg"),
-  "planet-mercury-internal": require("./planet-mercury-internal.svg"),
   "planet-mars": require("./planet-mars.svg"),
+  "planet-mercury-atmosphere": require("./planet-mercury-atmosphere.svg"),
+  "planet-mercury-internal": require("./planet-mercury-internal.svg"),
   "planet-mercury": require("./planet-mercury.svg"),
+  "planet-neptune-atmosphere": require("./planet-neptune-atmosphere.svg"),
   "planet-neptune-internal": require("./planet-neptune-internal.svg"),
   "planet-neptune": require("./planet-neptune.svg"),
+  "planet-saturn-atmosphere": require("./planet-saturn-atmosphere.svg"),
   "planet-saturn-internal": require("./planet-saturn-internal.svg"),
   "planet-saturn": require("./planet-saturn.svg"),
+  "planet-uranus-atmosphere": require("./planet-uranus-atmosphere.svg"),
   "planet-uranus-internal": require("./planet-uranus-internal.svg"),
   "planet-uranus": require("./planet-uranus.svg"),
+  "planet-venus-atmosphere": require("./planet-venus-atmosphere.svg"),
   "planet-venus-internal": require("./planet-venus-internal.svg"),
   "planet-venus": require("./planet-venus.svg")
 };
-},{"./background-stars.svg":"../assets/background-stars.svg","./icon-chevron.svg":"../assets/icon-chevron.svg","./icon-hamburger.svg":"../assets/icon-hamburger.svg","./icon-source.svg":"../assets/icon-source.svg","./planet-earth-internal.svg":"../assets/planet-earth-internal.svg","./planet-earth.svg":"../assets/planet-earth.svg","./planet-jupiter-internal.svg":"../assets/planet-jupiter-internal.svg","./planet-jupiter.svg":"../assets/planet-jupiter.svg","./planet-mars-internal.svg":"../assets/planet-mars-internal.svg","./planet-mercury-internal.svg":"../assets/planet-mercury-internal.svg","./planet-mars.svg":"../assets/planet-mars.svg","./planet-mercury.svg":"../assets/planet-mercury.svg","./planet-neptune-internal.svg":"../assets/planet-neptune-internal.svg","./planet-neptune.svg":"../assets/planet-neptune.svg","./planet-saturn-internal.svg":"../assets/planet-saturn-internal.svg","./planet-saturn.svg":"../assets/planet-saturn.svg","./planet-uranus-internal.svg":"../assets/planet-uranus-internal.svg","./planet-uranus.svg":"../assets/planet-uranus.svg","./planet-venus-internal.svg":"../assets/planet-venus-internal.svg","./planet-venus.svg":"../assets/planet-venus.svg"}],"index.js":[function(require,module,exports) {
+},{"./icon-chevron.svg":"../assets/icon-chevron.svg","./icon-hamburger.svg":"../assets/icon-hamburger.svg","./icon-source.svg":"../assets/icon-source.svg","./planet-earth-atmosphere.svg":"../assets/planet-earth-atmosphere.svg","./planet-earth-internal.svg":"../assets/planet-earth-internal.svg","./planet-earth.svg":"../assets/planet-earth.svg","./planet-jupiter-atmosphere.svg":"../assets/planet-jupiter-atmosphere.svg","./planet-jupiter-internal.svg":"../assets/planet-jupiter-internal.svg","./planet-jupiter.svg":"../assets/planet-jupiter.svg","./planet-mars-atmosphere.svg":"../assets/planet-mars-atmosphere.svg","./planet-mars-internal.svg":"../assets/planet-mars-internal.svg","./planet-mars.svg":"../assets/planet-mars.svg","./planet-mercury-atmosphere.svg":"../assets/planet-mercury-atmosphere.svg","./planet-mercury-internal.svg":"../assets/planet-mercury-internal.svg","./planet-mercury.svg":"../assets/planet-mercury.svg","./planet-neptune-atmosphere.svg":"../assets/planet-neptune-atmosphere.svg","./planet-neptune-internal.svg":"../assets/planet-neptune-internal.svg","./planet-neptune.svg":"../assets/planet-neptune.svg","./planet-saturn-atmosphere.svg":"../assets/planet-saturn-atmosphere.svg","./planet-saturn-internal.svg":"../assets/planet-saturn-internal.svg","./planet-saturn.svg":"../assets/planet-saturn.svg","./planet-uranus-atmosphere.svg":"../assets/planet-uranus-atmosphere.svg","./planet-uranus-internal.svg":"../assets/planet-uranus-internal.svg","./planet-uranus.svg":"../assets/planet-uranus.svg","./planet-venus-atmosphere.svg":"../assets/planet-venus-atmosphere.svg","./planet-venus-internal.svg":"../assets/planet-venus-internal.svg","./planet-venus.svg":"../assets/planet-venus.svg"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var bootstrap = _interopRequireWildcard(require("bootstrap"));
@@ -18174,16 +18195,12 @@ var wtf = require("wtf_wikipedia");
 var optionButtons = document.querySelectorAll(".btn-option");
 var planetDetail = document.querySelectorAll(".planet-detail__value");
 var planetSummaryContent = document.querySelector(".planet-summary__content");
-var planetSummarySource = document.querySelector(".planet-summary__source");
+var planetSummarySource = document.querySelector(".planet-summary__source-link");
 var planetSummaryTitle = document.querySelector(".planet-summary__title");
 var navLinks = document.querySelectorAll(".nav-link");
 var planetImage = document.querySelector(".planet-summary__img");
-var planetSummarySection = document.querySelector(".planet-summary"); // let isLoading = true;
-// console.log(svgImages);
-// console.log(foo);
-// const planetSummaryUrl = [
-//   "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&titles=Jupiter&formatversion=2&exsentences=10&exlimit=1&explaintext=1",
-// ];
+var planetSummarySection = document.querySelector(".planet-summary");
+var loaders = document.querySelectorAll(".loader"); // let isLoading = true;
 // const planetDetailUrl =
 //   "https://api.le-systeme-solaire.net/rest.php/bodies/earth";
 
@@ -18209,22 +18226,10 @@ var colors = {
   Saturn: "rgba(205, 81, 32, 1)",
   Uranus: "rgba(30, 193, 162, 1)",
   Neptune: "rgba(45, 104, 240, 1)"
-}; // document.querySelector(".planet-summary__img").src =
-//   "../assets/planet-earth.svg";
-// window.onload = function () {
-//   document.getElementById("sup").src = require("../assets/planet-earth.svg");
-//   // document.getElementById("img2").src="screenshot.png";
-// };
-
+};
 handleClickNavLink(getInitialActiveLink);
 
 function changeContentByPlanet(planet, v) {
-  // console.log(images[`planet${planet}`]);
-  // planet = planet.toLowerCase();
-  // console.log(planetImage);
-  // planetImage.src = require(images[`planet${planet}`]);
-  // planetImage.src = svgImages[`planet-${planet.toLowerCase()}`];
-  // console.log(images[`planet${planet}`]);
   optionButtons.forEach(function (btn) {
     btn.style.backgroundColor = "transparent";
 
@@ -18232,59 +18237,36 @@ function changeContentByPlanet(planet, v) {
       btn.style.backgroundColor = "".concat(colors[planet]);
       btn.style.border = "1px solid rgb(56, 56, 79)";
     }
-  }); // v.style.backgroundColor = `${colors[planet]}`;
-
+  });
   planetSummaryTitle.innerHTML = planet;
-} // function changePlanetImageByOption(value) {
-//   // let planet = 'overview'
-//   value = value.toLowerCase();
-//   let _currentPlanet = currentPlanet.toLowerCase();
-//   console.log(value);
-//   let _imgName =
-//     value === "overview"
-//       ? `planet-${_currentPlanet}`
-//       : value === "internalstructure"
-//       ? `planet-${_currentPlanet}-internal`
-//       : `planet-${_currentPlanet}-atmosphere`;
-//   // console.log(_imgName);
-//   planetImage.src = svgImages[_imgName];
-// }
-
+}
 
 function toggleActiveNavLink(v) {
   navLinks.forEach(function (v) {
-    // console.log(v);
     v.classList.remove("active");
   });
   v.classList.add("active");
 }
 
 function handleClickNavLink(v) {
-  // planetSummarySection.style.display = "none";
-  var planet = v.innerHTML; // console.log(currentOption);
-
+  planetSummarySection.style.display = "none";
+  var planet = v.innerHTML;
   currentPlanet = planet;
 
   var _planet = planet === "Mercury" ? "Mercury_(planet)" : planet;
 
-  toggleActiveNavLink(v); // let _sectionIndex;
-
-  fetch( // step 1 : get the sections of specifi page (title)
-  "https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=".concat(_planet, "&prop=sections&disabletoc=1") // fetch sections
+  toggleActiveNavLink(v);
+  fetch("https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=".concat(_planet, "&prop=sections&disabletoc=1") // fetch sections to get indexes
   ).then(function (data) {
     return data.json();
   }).then(function (data) {
-    // console.log(data);
-    // step 2 : get the index and fetch from another url and get the content
-    // console.log(data.parse.sections);
     var _internalStructureIndex = data.parse.sections.find(function (one) {
       return one.line.toLowerCase().includes("internal");
     }).index;
     var _atmosphereIndex = data.parse.sections.find(function (one) {
       return one.line.toLowerCase().includes("atmosphere") || one.line.toLowerCase().includes("sphere");
     }).index;
-    var urls = ["https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=extracts&generator=search&formatversion=2&exsentences=3&exlimit=1&exintro=1&explaintext=1&gsrsearch=intitle:planet%20".concat(_planet, "&gsrlimit=1"), "https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=".concat(_planet, "&prop=wikitext&section=").concat(_internalStructureIndex, "&disabletoc=1"), "https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=".concat(_planet, "&prop=wikitext&section=").concat(_atmosphereIndex, "&disabletoc=1") // `https://api.le-systeme-solaire.net/rest.php/bodies/${_planet}`,
-    ];
+    var urls = ["https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=info|extracts&inprop=url&generator=search&formatversion=2&exsentences=3&exlimit=1&exintro=1&explaintext=1&gsrsearch=intitle:planet%20".concat(_planet, "&gsrlimit=1"), "https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=".concat(_planet, "&prop=wikitext&section=").concat(_internalStructureIndex, "&disabletoc=1"), "https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=".concat(_planet, "&prop=wikitext&section=").concat(_atmosphereIndex, "&disabletoc=1"), "https://api.le-systeme-solaire.net/rest.php/bodies/".concat(planet)];
     var requests = urls.map(function (url) {
       return fetch(url);
     });
@@ -18294,25 +18276,52 @@ function handleClickNavLink(v) {
       return r.json();
     }));
   }).then(function (data) {
-    // console.log(data);
-    // let text = Object.values(data[1].parse.wikitext);
-    // console.log(text[0]);
+    console.log(data); // console.log(data[3]);
+
     var summary = data[0].query.pages[0].extract;
     var internalStructureText = wtf(Object.values(data[1].parse.wikitext)[0]).text();
-    var atmosphereText = wtf(Object.values(data[2].parse.wikitext)[0]).text(); // isLoading = false;
-    // planetSummarySection.style.display = "block";
-
+    var atmosphereText = wtf(Object.values(data[2].parse.wikitext)[0]).text();
+    loaders.forEach(function (loader) {
+      loader.classList.add("remove");
+    });
+    planetSummarySource.href = data[0].query.pages[0].fullurl;
+    planetSummarySection.style.display = "block";
     planetValues.Summary = summary;
     planetValues.InternalStructure = internalStructureText;
-    planetValues.Atmosphere = atmosphereText; // console.log(planetValues, currentOption);
-
+    planetValues.Atmosphere = atmosphereText;
+    changePlanetDetailByPlanet(data[3]);
     checkWhichOptionClicked(currentOption);
-    changeContentByPlanet(planet, v); // planetSummaryContent.innerHTML = planetValues[currentOption];
-    //
-    // const text = htmlToText(Object.values(data.parse.text));
-    // console.log(text);
+    changeContentByPlanet(planet, v);
   }).catch(function (err) {
     return console.log(err);
+  });
+}
+
+function changePlanetDetailByPlanet(data) {
+  // const allowed = ["aphelion", "sideralRotation", "avgTemp", "meanRadius"];
+  // console.log(data.sideralRotation);
+  data.sideralRotation = Math.abs(data.sideralRotation);
+  var values = [data.aphelion > 1000000000 ? "".concat((data.aphelion / 1000000000).toFixed(2), " bil km") : "".concat((data.aphelion / 1000000).toFixed(1), "mil km"), "".concat(Math.floor(data.sideralRotation / 24), "d ").concat(Math.floor(data.sideralRotation % 24), "hr ").concat(Math.floor(60 * (data.sideralRotation % 24 - Math.floor(data.sideralRotation % 24))), "m"), "".concat(data.avgTemp - 273.5, " &deg;C"), "".concat(data.meanRadius.toFixed(1).toLocaleString(), " KM")]; // var hours = Math.floor(num / 60);
+  // var minutes = num % 60;
+  // return hours + ":" + minutes;
+  // const awayFromSun = `${data.aphelion / 10000000} million km`;
+  // const avgTemp = data.avgTemp;
+  // const rotationTime = data.sideralRotation;
+  // const size = data.meanRadius;
+  //  K - 273.15 = C
+  // const filteredValues = Object.keys(data)
+  //   .filter((key) => allowed.includes(key))
+  //   .reduce((obj, key) => {
+  //     obj[key] = data[key];
+  //     return obj;
+  //   }, {});
+  // console.log(filteredValues[0]);
+  // console.log(rotationTime);
+  // const [awayFromSun, rotationtime, avgTemp, size] = data;
+  // awayFromSun;
+
+  planetDetail.forEach(function (detail, i) {
+    detail.innerHTML = values[i];
   });
 }
 
@@ -18321,47 +18330,26 @@ function toggleActiveOptionBtn(v) {
     btn.classList.remove("active");
   });
   v.classList.add("active");
-} // (function loadingIndicator() {
-//   if (isLoading) {
-//     planetSummarySection.style.display = "none";
-//   } else {
-//     planetSummarySection.style.display = "block";
-//   }
-// })();
-
+}
 
 function handleChangeOption(v) {
   var value = v.innerHTML;
-  currentOption = value.split(": ")[1].replace(/\s/g, ""); // console.log(v);
-
+  currentOption = value.split(": ")[1].replace(/\s/g, "");
   toggleActiveOptionBtn(v);
-  changeContentByPlanet(currentPlanet, v); // changePlanetImageByOption(currentOption);
-
+  changeContentByPlanet(currentPlanet, v);
   checkWhichOptionClicked(currentOption);
 }
 
 function checkWhichOptionClicked(value) {
   value = value.toLowerCase();
 
-  var _currentPlanet = currentPlanet.toLowerCase(); // console.log(value);
-  // let _imgName;
-  // value === "overview"
-  //   ? `planet-${_currentPlanet}`
-  //   : value === "internalstructure"
-  //   ? `planet-${_currentPlanet}-internal`
-  //   : `planet-${_currentPlanet}-atmosphere`;
-  // console.log(_imgName);
-
+  var _currentPlanet = currentPlanet.toLowerCase();
 
   if (value === "overview") {
-    // _imgName = `planet-${_currentPlanet}`;
     handleClickOverviewOption(_currentPlanet);
   } else if (value === "internalstructure") {
-    // _imgName = `planet-${_currentPlanet}-internal`;
     handleClickInternalOption(_currentPlanet);
   } else {
-    // _imgName = `planet-${_currentPlanet}-atmosphere`;
-    // console.log("xi");
     handleClickAtmosphereOption(_currentPlanet);
   }
 }
@@ -18372,15 +18360,15 @@ function handleClickOverviewOption(_currentPlanet) {
 }
 
 function handleClickInternalOption(_currentPlanet) {
-  console.log("internal");
+  // console.log("internal");
   planetImage.src = _.default["planet-".concat(_currentPlanet, "-internal")];
   planetSummaryContent.innerHTML = planetValues.InternalStructure.length > 350 ? planetValues.InternalStructure.substring(0, 350).concat(" ...") : planetValues.InternalStructure;
 }
 
 function handleClickAtmosphereOption(_currentPlanet) {
-  // console.log(planetValues);
+  // console.log("atmosphere");
   planetImage.src = _.default["planet-".concat(_currentPlanet, "-atmosphere")];
-  planetSummaryContent.innerHTML = planetValues.Atmosphere.length > 350 ? planetValues.Atmosphere.substring(0, 350).concat(" ...") : planetValues.Atmosphere; // planetSummaryContent.innerHTML = planetValues.atmosphere;
+  planetSummaryContent.innerHTML = planetValues.Atmosphere.length > 350 ? planetValues.Atmosphere.substring(0, 350).concat(" ...") : planetValues.Atmosphere;
 }
 
 navLinks.forEach(function (v) {
@@ -18392,8 +18380,7 @@ optionButtons.forEach(function (v) {
   v.addEventListener("click", function () {
     return handleChangeOption(v);
   });
-}); // function displayEarth() {}
-// function displayJupiter () {}
+});
 },{"bootstrap":"../node_modules/bootstrap/dist/js/bootstrap.esm.js","wtf_wikipedia":"../node_modules/wtf_wikipedia/builds/wtf_wikipedia-client.js","../assets/*.svg":"../assets/*.svg"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -18422,7 +18409,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58595" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54985" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

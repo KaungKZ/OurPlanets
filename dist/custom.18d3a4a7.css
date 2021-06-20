@@ -10806,6 +10806,10 @@ body {
 .planet-summary__content {
   color: #f5f6f7;
 }
+.planet-summary__source-link img {
+  width: 15px;
+  height: 15px;
+}
 .planet-summary .btn-check:focus + .btn-outline-primary,
 .planet-summary .btn-outline-primary:focus,
 .planet-summary .btn-check:checked + .btn-outline-primary:focus,
@@ -10842,9 +10846,17 @@ body {
 }
 
 @media (max-width: 1200px) {
+  .planet-summary {
+    margin: 40px auto 80px auto;
+  }
   .planet-summary__img {
-    width: 400px;
-    height: 400px;
+    width: 375px;
+    height: 375px;
+  }
+}
+@media screen and (max-width: 1100px) and (min-width: 992px) {
+  .planet-summary__content {
+    font-size: 14px !important;
   }
 }
 
