@@ -10736,7 +10736,7 @@ textarea.form-control-lg {
 }
 
 body {
-  background: url(/figmaBackground.d87e5a96.png);
+  background: url(/figmaBackground.f194e20d.png);
   background-size: cover;
 }
 
@@ -10795,7 +10795,7 @@ body {
 .planet-summary__title {
   font-family: "Antonio", sans-serif;
 }
-.planet-summary__img img {
+.planet-summary__img {
   width: 450px;
   height: 450px;
   object-fit: cover;
@@ -10842,7 +10842,7 @@ body {
 }
 
 @media (max-width: 1200px) {
-  .planet-summary__img img {
+  .planet-summary__img {
     width: 400px;
     height: 400px;
   }

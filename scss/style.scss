@@ -4,7 +4,7 @@
 }
 body {
   // background: white;
-  background: url(../src/assets/figmaBackground.png);
+  background: url(../assets/figmaBackground.png);
   background-size: cover;
   // background-repeat: no-repeat;
 }
@@ -85,11 +85,9 @@ body {
   }
 
   &__img {
-    img {
-      width: 450px;
-      height: 450px;
-      object-fit: cover;
-    }
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
   }
 
   &__source,
@@ -151,7 +149,7 @@ body {
 
 @media (max-width: 1200px) {
   .planet-summary {
-    &__img img {
+    &__img {
       width: 400px;
       height: 400px;
     }
