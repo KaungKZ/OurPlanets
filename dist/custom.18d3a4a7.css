@@ -10863,6 +10863,9 @@ body {
   }
 }
 @media (max-width: 991.98px) {
+  .navbar .navbar-collapse {
+    margin-top: 1.5rem;
+  }
   .navbar .nav-item {
     display: flex;
     align-items: center;
@@ -10989,6 +10992,10 @@ body {
   }
 }
 @media (max-width: 400px) {
+  .navbar .navbar-collapse {
+    margin-top: 1rem;
+  }
+
   .planet-detail__title {
     font-size: 14px;
   }

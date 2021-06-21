@@ -198,18 +198,21 @@ function toggleActiveOptionBtn(v) {
 
 function handleChangeOption(v) {
   // console.log(v.dataset.value);
-  let currentOption = v.dataset.value.toLowerCase();
+  let _currentOption = v.dataset.value;
 
-  // currentOption = value.split(": ")[1].replace(/\s/g, "");
+  // console.log(currentOption);
+
+  currentOption = _currentOption;
 
   toggleActiveOptionBtn(v);
   changeContentByPlanet(currentPlanet);
 
-  checkWhichOptionClicked(currentOption);
+  checkWhichOptionClicked(_currentOption);
 }
 
 function checkWhichOptionClicked(value) {
-  // value = value.toLowerCase();
+  value = value.toLowerCase();
+  console.log(value);
   let _currentPlanet = currentPlanet.toLowerCase();
 
   if (value === "overview") {

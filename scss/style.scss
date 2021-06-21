@@ -230,6 +230,9 @@ body {
 }
 @media (max-width: 991.98px) {
   .navbar {
+    .navbar-collapse {
+      margin-top: 1.5rem;
+    }
     .nav-item {
       display: flex;
       align-items: center;
@@ -393,6 +396,11 @@ body {
 }
 
 @media (max-width: 400px) {
+  .navbar {
+    .navbar-collapse {
+      margin-top: 1rem;
+    }
+  }
   .planet-detail {
     &__title {
       font-size: 14px;
