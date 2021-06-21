@@ -42,7 +42,7 @@ const colors = {
 };
 
 handleClickNavLink(getInitialActiveLink);
-function changeContentByPlanet(planet, v) {
+function changeContentByPlanet(planet) {
   optionButtons.forEach((btn) => {
     btn.style.backgroundColor = "transparent";
 
@@ -132,7 +132,7 @@ function handleClickNavLink(v) {
       changePlanetDetailByPlanet(data[3]);
 
       checkWhichOptionClicked(currentOption);
-      changeContentByPlanet(planet, v);
+      changeContentByPlanet(planet);
     })
     .catch((err) => console.log(err));
 }
@@ -197,23 +197,24 @@ function toggleActiveOptionBtn(v) {
 }
 
 function handleChangeOption(v) {
-  let value = v.innerHTML;
+  // console.log(v.dataset.value);
+  let currentOption = v.dataset.value.toLowerCase();
 
-  currentOption = value.split(": ")[1].replace(/\s/g, "");
+  // currentOption = value.split(": ")[1].replace(/\s/g, "");
 
   toggleActiveOptionBtn(v);
-  changeContentByPlanet(currentPlanet, v);
+  changeContentByPlanet(currentPlanet);
 
   checkWhichOptionClicked(currentOption);
 }
 
 function checkWhichOptionClicked(value) {
-  value = value.toLowerCase();
+  // value = value.toLowerCase();
   let _currentPlanet = currentPlanet.toLowerCase();
 
   if (value === "overview") {
     handleClickOverviewOption(_currentPlanet);
-  } else if (value === "internalstructure") {
+  } else if (value === "internal-structure") {
     handleClickInternalOption(_currentPlanet);
   } else {
     handleClickAtmosphereOption(_currentPlanet);
@@ -244,10 +245,14 @@ function handleClickAtmosphereOption(_currentPlanet) {
 }
 
 function handleResizeDocument() {
-  if (window.innerWidth < 768) {
-    optionButtons.forEach((btn) => {
-      btn.innerHTML = btn.innerHTML.split(":")[1];
-    });
+  if (window.innerWidth <= 768) {
+    optionButtons[0].innerHTML = "Overview";
+    optionButtons[1].innerHTML = "Structure";
+    optionButtons[2].innerHTML = "Atmosphere";
+  } else {
+    optionButtons[0].innerHTML = "01: Overview";
+    optionButtons[1].innerHTML = "02: Internal Structure";
+    optionButtons[2].innerHTML = "03: Atmosphere";
   }
 }
 
@@ -263,4 +268,4 @@ optionButtons.forEach((v) => {
   v.addEventListener("click", () => handleChangeOption(v));
 });
 
-document.addEventListener("resize", handleResizeDocument);
+window.addEventListener("resize", handleResizeDocument, true);

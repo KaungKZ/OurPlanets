@@ -211,7 +211,7 @@ body {
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199.98px) {
   .planet-summary {
     margin: 40px auto 80px auto;
 
@@ -221,14 +221,14 @@ body {
     }
   }
 }
-@media screen and (max-width: 1100px) and (min-width: 992px) {
+@media screen and (max-width: 1100px) and (min-width: 991.98px) {
   .planet-summary {
     &__content {
       font-size: 14px !important;
     }
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 991.98px) {
   .navbar {
     .nav-item {
       display: flex;
@@ -247,6 +247,7 @@ body {
       }
     }
     .navbar-nav .nav-link {
+      width: 100%;
       &::before,
       &.active::before,
       &:hover::before {
@@ -290,40 +291,41 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
   .nav-divider {
     display: none;
   }
   .planet-summary-wrapper {
     position: relative;
+  }
 
-    .planet-summary {
-      margin: 0px auto 40px auto;
-      padding-top: 122px;
-      &__options {
-        display: flex !important;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        gap: 0px !important;
-        // margin-bottom: 40px;
+  .planet-summary {
+    margin: 0px auto 40px auto;
+    padding-top: 122px;
+    &__options {
+      display: flex !important;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      gap: 0px !important;
+      // margin-bottom: 40px;
 
-        .btn-option {
-          // display: inline;
-          padding: 1rem 1.5rem !important;
-          text-align: center !important;
-          border-radius: 0px !important;
-        }
+      .btn-option {
+        // display: inline;
+        padding: 1rem 1.5rem !important;
+        text-align: center !important;
+        border-radius: 0px !important;
       }
+    }
 
-      &__source {
-        margin-bottom: 15px !important;
-      }
+    &__source {
+      margin-bottom: 15px !important;
     }
   }
 
   .planet-detail {
+    margin-bottom: 0px !important;
     &__wrapper {
       display: flex;
       justify-content: space-between;
@@ -340,25 +342,89 @@ body {
 }
 
 @media (max-width: 680px) {
-  .planet-summary-wrapper {
-    .planet-summary {
-      &__img {
-        width: 275px;
-        height: 275px;
-      }
+  .planet-summary {
+    &__img {
+      width: 275px;
+      height: 275px;
+    }
 
-      &__options {
-        // display: none;
-        .btn-option {
-          // display: inline;
-          padding: 1rem 0.5rem !important;
-          font-size: 14px !important;
-          // text-align: center !important;
-        }
+    &__options {
+      // display: none;
+      .btn-option {
+        // display: inline;
+        padding: 1rem 0.5rem !important;
+        font-size: 14px !important;
+        // text-align: center !important;
       }
     }
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575.98px) {
+  .planet-summary {
+    padding-top: 100px;
+
+    &__img-wrapper {
+      margin-bottom: 25px;
+    }
+
+    &__title {
+      text-decoration: underline;
+      text-decoration-color: $primary-color-blue;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .planet-summary {
+    &__img {
+      width: 250px;
+      height: 250px;
+    }
+
+    &__content {
+      font-size: 14px !important;
+    }
+
+    &__source {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .planet-detail {
+    &__title {
+      font-size: 14px;
+    }
+
+    &__value {
+      font-size: calc(1.175rem + 1.5vw) !important;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .planet-summary {
+    &__img {
+      width: 200px;
+      height: 200px;
+    }
+
+    &__options {
+      .btn-option {
+        font-size: 12px !important;
+      }
+    }
+  }
+
+  .planet-detail {
+    &__title {
+      font-size: 12px;
+    }
+
+    &__value {
+      font-size: calc(1rem + 1.5vw) !important;
+    }
+  }
 }
