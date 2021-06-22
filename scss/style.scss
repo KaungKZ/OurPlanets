@@ -4,53 +4,102 @@
 }
 body {
   // background: white;
-  background: url(../assets/figmaBackground.png);
+  background: #070724 url(../assets/figmaBackground.png);
   background-size: cover;
+
+  &.loader-active {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
   // background-repeat: no-repeat;
 }
 
-// .loader.remove {
+// .skeleton-loader {
+//   margin-top: 80px;
 //   display: none;
-// }
+//   pointer-events: none;
 
-// .skeleton-loader-background {
-//   width: 100%;
-//   height: 15px;
-//   display: block;
-//   background: lightgray;
-// }
+//   &.active {
+//     pointer-events: all;
+//     display: block;
+//   }
+//   &__summary {
+//     min-height: 550px;
+//     height: 1px;
+//     display: flex;
+//     justify-content: space-between;
+//   }
 
-// .skeleton-loader-gradient {
-//   width: 100%;
-//   height: 15px;
-//   display: block;
-//   background: linear-gradient(
-//       to right,
-//       rgba(255, 255, 255, 0),
-//       rgba(255, 255, 255, 0.5) 50%,
-//       rgba(255, 255, 255, 0) 80%
-//     ),
-//     lightgray;
-//   background-repeat: repeat-y;
-//   background-size: 50px 200px;
-//   background-position: 0 0;
-// }
+//   &__loader {
+//     &.photo {
 
-// .skeleton-loader:empty {
-//   width: 100%;
-//   height: 15px;
-//   display: block;
-//   background: linear-gradient(
-//       to right,
-//       rgba(255, 255, 255, 0),
-//       rgba(255, 255, 255, 0.5) 50%,
-//       rgba(255, 255, 255, 0) 80%
-//     ),
-//     lightgray;
-//   background-repeat: repeat-y;
-//   background-size: 50px 500px;
-//   background-position: 0 0;
-//   animation: shine 1s infinite;
+//       width: 450px;
+//       height: 100%;
+//       display: flex;
+//       align-items: center;
+//     }
+
+//     &.content {
+
+//       width: 650px;
+//       height: 100%;
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: space-around;
+//     }
+//   }
+
+//   &__photo {
+//     width: 100%;
+//     height: 450px;
+//     background: linear-gradient(
+//         to right,
+//         rgba(255, 255, 255, 0),
+//         rgba(255, 255, 255, 0.5) 50%,
+//         rgba(255, 255, 255, 0) 80%
+//       ),
+//       rgba(255, 255, 255, 0.55);
+//     background-repeat: repeat-y;
+//     background-size: 50px 200px;
+//     background-position: 0 0;
+//     animation: shine 1s infinite;
+//     border-radius: 4px;
+//     display: block;
+//   }
+
+//   &__content {
+
+//     width: 100%;
+
+//     background: linear-gradient(
+//         to right,
+//         rgba(255, 255, 255, 0),
+//         rgba(255, 255, 255, 0.5) 50%,
+//         rgba(255, 255, 255, 0) 80%
+//       ),
+//       rgba(255, 255, 255, 0.55);
+//     background-repeat: repeat-y;
+//     background-size: 50px 200px;
+//     background-position: 0 0;
+//     animation: shine 1s infinite;
+//     border-radius: 4px;
+//     display: block;
+//     &:first-child {
+//       height: 75px;
+//     }
+
+//     &:nth-child(2) {
+//       height: 125px;
+//     }
+
+//     &:last-child {
+//       height: 150px;
+//     }
+//   }
+
+//   &__grid {
+//   }
 // }
 
 // @keyframes shine {
@@ -59,12 +108,24 @@ body {
 //   }
 // }
 
-// #container {
-//   .navbar .navbar-nav .nav-link,
-//   .navbar .navbar-brand {
-//     color: #fff;
-//   }
-// }
+.loader {
+  font-family: $title-font-secondary;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  color: $light-text-color;
+
+  &.active {
+    display: flex;
+    pointer-events: all;
+    flex: 1;
+  }
+}
 
 .navbar {
   .nav-item {

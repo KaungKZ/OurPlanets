@@ -12,7 +12,8 @@ const planetSummaryTitle = document.querySelector(".planet-summary__title");
 const navLinks = document.querySelectorAll(".nav-link");
 const planetImage = document.querySelector(".planet-summary__img");
 const planetSummarySection = document.querySelector(".planet-summary");
-const loaders = document.querySelectorAll(".loader");
+const planetDetailSection = document.querySelector(".planet-detail");
+const loader = document.querySelector(".loader");
 
 // let isLoading = true;
 
@@ -64,7 +65,11 @@ function toggleActiveNavLink(v) {
 }
 
 function handleClickNavLink(v) {
+  loader.classList.add("active");
+  document.body.classList.add("loader-active");
+
   planetSummarySection.style.display = "none";
+  planetDetailSection.style.display = "none";
 
   let planet = v.innerHTML;
 
@@ -106,7 +111,7 @@ function handleClickNavLink(v) {
       return Promise.all(res.map((r) => r.json()));
     })
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       // console.log(data[3]);
 
       const summary = data[0].query.pages[0].extract;
@@ -119,11 +124,15 @@ function handleClickNavLink(v) {
         Object.values(data[2].parse.wikitext)[0]
       ).text();
 
-      loaders.forEach((loader) => {
-        loader.classList.add("remove");
-      });
+      // loaders.forEach((loader) => {
+      //   loader.classList.add("remove");
+      // });
       planetSummarySource.href = data[0].query.pages[0].fullurl;
+      document.body.classList.remove("loader-active");
+
+      loader.classList.remove("active");
       planetSummarySection.style.display = "block";
+      planetDetailSection.style.display = "block";
 
       planetValues.Summary = summary;
       planetValues.InternalStructure = internalStructureText;
