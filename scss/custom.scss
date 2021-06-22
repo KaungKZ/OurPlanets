@@ -2,16 +2,10 @@
 @use "sass:math"; //Normally placed on top of your scss file
 @import url("https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Spartan:wght@400;700&display=swap");
 
-// div.sample {
-//   width: math.div(100%, 2);
-// }
-
-// 2. Include any default variable overrides here
-
 $title-font: "Antonio", sans-serif;
 $title-font-secondary: "Spartan", sans-serif;
 $primary-color-blue: #6d2ed5;
 $light-text-color: #f5f6f7;
 
-// @import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/bootstrap";
 @import "./style";
