@@ -3,127 +3,34 @@
   padding: 0;
 }
 body {
-  // background: white;
   background: #070724 url(../assets/figmaBackground.png);
   background-size: cover;
+  height: 100vh;
+  flex-direction: column;
+  display: none;
 
-  &.loader-active {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+  &.loader-remove {
+    height: initial;
+    display: initial;
   }
-  // background-repeat: no-repeat;
 }
-
-// .skeleton-loader {
-//   margin-top: 80px;
-//   display: none;
-//   pointer-events: none;
-
-//   &.active {
-//     pointer-events: all;
-//     display: block;
-//   }
-//   &__summary {
-//     min-height: 550px;
-//     height: 1px;
-//     display: flex;
-//     justify-content: space-between;
-//   }
-
-//   &__loader {
-//     &.photo {
-
-//       width: 450px;
-//       height: 100%;
-//       display: flex;
-//       align-items: center;
-//     }
-
-//     &.content {
-
-//       width: 650px;
-//       height: 100%;
-//       display: flex;
-//       flex-direction: column;
-//       justify-content: space-around;
-//     }
-//   }
-
-//   &__photo {
-//     width: 100%;
-//     height: 450px;
-//     background: linear-gradient(
-//         to right,
-//         rgba(255, 255, 255, 0),
-//         rgba(255, 255, 255, 0.5) 50%,
-//         rgba(255, 255, 255, 0) 80%
-//       ),
-//       rgba(255, 255, 255, 0.55);
-//     background-repeat: repeat-y;
-//     background-size: 50px 200px;
-//     background-position: 0 0;
-//     animation: shine 1s infinite;
-//     border-radius: 4px;
-//     display: block;
-//   }
-
-//   &__content {
-
-//     width: 100%;
-
-//     background: linear-gradient(
-//         to right,
-//         rgba(255, 255, 255, 0),
-//         rgba(255, 255, 255, 0.5) 50%,
-//         rgba(255, 255, 255, 0) 80%
-//       ),
-//       rgba(255, 255, 255, 0.55);
-//     background-repeat: repeat-y;
-//     background-size: 50px 200px;
-//     background-position: 0 0;
-//     animation: shine 1s infinite;
-//     border-radius: 4px;
-//     display: block;
-//     &:first-child {
-//       height: 75px;
-//     }
-
-//     &:nth-child(2) {
-//       height: 125px;
-//     }
-
-//     &:last-child {
-//       height: 150px;
-//     }
-//   }
-
-//   &__grid {
-//   }
-// }
-
-// @keyframes shine {
-//   to {
-//     background-position: 100% 0;
-//   }
-// }
 
 .loader {
   font-family: $title-font-secondary;
-  display: none;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: 100%;
-  pointer-events: none;
+  display: flex;
+  pointer-events: all;
+  flex: 1;
 
   color: $light-text-color;
 
-  &.active {
-    display: flex;
-    pointer-events: all;
-    flex: 1;
+  &.hide {
+    pointer-events: none;
+    display: none;
   }
 }
 
@@ -151,7 +58,6 @@ body {
         height: 6px;
         width: 100%;
         background: $primary-color-blue;
-        // background: #6d2ed5;
         transition: all 400ms;
         transform-origin: 50% 50%;
         transform: scaleX(1);
@@ -165,7 +71,6 @@ body {
       height: 3px;
       width: 100%;
       background: $primary-color-blue;
-      // background: #6d2ed5;
       transition: all 400ms;
       transform-origin: 50% 50%;
       transform: scaleX(0);
@@ -173,19 +78,15 @@ body {
 
     &:hover::before {
       transform: scaleX(1);
-      // width: 100%;
-      // display: none;
     }
   }
 }
 
 .nav-divider {
-  // border-top: 1px solid #fff;
   width: 100%;
   height: 2px;
   background: rgba(45, 102, 240, 0.2);
   display: block;
-  // background: #fff;
   margin: 0;
 }
 
@@ -215,13 +116,9 @@ body {
   }
 
   &__source-link {
-    // color: $light-text-color;
-
     img {
       width: 15px;
       height: 15px;
-
-      // margin-bottom: 1px;
     }
   }
 
@@ -238,7 +135,6 @@ body {
   }
   .btn-option {
     &.active {
-      // background: $primary-color-blue;
       font-weight: 700;
     }
 
@@ -256,7 +152,6 @@ body {
   &__wrapper {
     border: 1px solid rgba(45, 102, 240, 0.2);
     min-height: 100px;
-    // border: ;
   }
 
   &__title {
@@ -373,10 +268,8 @@ body {
       left: 0;
       width: 100%;
       gap: 0px !important;
-      // margin-bottom: 40px;
 
       .btn-option {
-        // display: inline;
         padding: 1rem 1.5rem !important;
         text-align: center !important;
         border-radius: 0px !important;
@@ -413,12 +306,9 @@ body {
     }
 
     &__options {
-      // display: none;
       .btn-option {
-        // display: inline;
         padding: 1rem 0.5rem !important;
         font-size: 14px !important;
-        // text-align: center !important;
       }
     }
   }

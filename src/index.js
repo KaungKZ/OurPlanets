@@ -15,14 +15,13 @@ const planetSummarySection = document.querySelector(".planet-summary");
 const planetDetailSection = document.querySelector(".planet-detail");
 const loader = document.querySelector(".loader");
 
-// let isLoading = true;
-
-// const planetDetailUrl =
-//   "https://api.le-systeme-solaire.net/rest.php/bodies/earth";
 const initialActiveLink = "Earth";
 const getInitialActiveLink = [...navLinks].find(
   (link) => link.innerHTML === initialActiveLink
 );
+
+// loader.classList.add("active");
+// document.body.classList.add("loader-remove");
 
 const planetValues = {
   Summary: "",
@@ -65,9 +64,13 @@ function toggleActiveNavLink(v) {
 }
 
 function handleClickNavLink(v) {
-  loader.classList.add("active");
-  document.body.classList.add("loader-active");
+  document.body.style.height = "100vh";
+  document.body.style.display = "flex";
+  document.body.style.flexDirection = "column";
 
+  loader.style.display = "flex";
+  loader.style.pointerEvents = "all";
+  loader.style.flex = "1";
   planetSummarySection.style.display = "none";
   planetDetailSection.style.display = "none";
 
@@ -111,9 +114,6 @@ function handleClickNavLink(v) {
       return Promise.all(res.map((r) => r.json()));
     })
     .then((data) => {
-      // console.log(data);
-      // console.log(data[3]);
-
       const summary = data[0].query.pages[0].extract;
 
       const internalStructureText = wtf(
@@ -124,13 +124,15 @@ function handleClickNavLink(v) {
         Object.values(data[2].parse.wikitext)[0]
       ).text();
 
-      // loaders.forEach((loader) => {
-      //   loader.classList.add("remove");
-      // });
       planetSummarySource.href = data[0].query.pages[0].fullurl;
-      document.body.classList.remove("loader-active");
 
-      loader.classList.remove("active");
+      document.body.style.height = "initial";
+      document.body.style.display = "initial";
+      document.body.style.flexDirection = "column";
+
+      loader.style.display = "none";
+      loader.style.pointerEvents = "none";
+
       planetSummarySection.style.display = "block";
       planetDetailSection.style.display = "block";
 
@@ -147,10 +149,6 @@ function handleClickNavLink(v) {
 }
 
 function changePlanetDetailByPlanet(data) {
-  // const allowed = ["aphelion", "sideralRotation", "avgTemp", "meanRadius"];
-
-  // console.log(data.sideralRotation);
-
   data.sideralRotation = Math.abs(data.sideralRotation);
 
   let values = [
@@ -167,31 +165,6 @@ function changePlanetDetailByPlanet(data) {
     `${data.meanRadius.toFixed(1).toLocaleString()} KM`,
   ];
 
-  // var hours = Math.floor(num / 60);
-  // var minutes = num % 60;
-  // return hours + ":" + minutes;
-
-  // const awayFromSun = `${data.aphelion / 10000000} million km`;
-  // const avgTemp = data.avgTemp;
-  // const rotationTime = data.sideralRotation;
-  // const size = data.meanRadius;
-
-  //  K - 273.15 = C
-
-  // const filteredValues = Object.keys(data)
-  //   .filter((key) => allowed.includes(key))
-  //   .reduce((obj, key) => {
-  //     obj[key] = data[key];
-  //     return obj;
-  //   }, {});
-
-  // console.log(filteredValues[0]);
-
-  // console.log(rotationTime);
-
-  // const [awayFromSun, rotationtime, avgTemp, size] = data;
-
-  // awayFromSun;
   planetDetail.forEach((detail, i) => {
     detail.innerHTML = values[i];
   });
@@ -206,10 +179,7 @@ function toggleActiveOptionBtn(v) {
 }
 
 function handleChangeOption(v) {
-  // console.log(v.dataset.value);
   let _currentOption = v.dataset.value;
-
-  // console.log(currentOption);
 
   currentOption = _currentOption;
 
@@ -239,7 +209,6 @@ function handleClickOverviewOption(_currentPlanet) {
 }
 
 function handleClickInternalOption(_currentPlanet) {
-  // console.log("internal");
   planetImage.src = svgImages[`planet-${_currentPlanet}-internal`];
   planetSummaryContent.innerHTML =
     planetValues.InternalStructure.length > 350
@@ -248,7 +217,6 @@ function handleClickInternalOption(_currentPlanet) {
 }
 
 function handleClickAtmosphereOption(_currentPlanet) {
-  // console.log("atmosphere");
   planetImage.src = svgImages[`planet-${_currentPlanet}-atmosphere`];
   planetSummaryContent.innerHTML =
     planetValues.Atmosphere.length > 350
@@ -271,6 +239,10 @@ function handleResizeDocument() {
 (function initForCss() {
   return handleResizeDocument();
 })();
+
+window.onload = () => {
+  document.body.style.display = "flex";
+};
 
 navLinks.forEach((v) => {
   v.addEventListener("click", () => handleClickNavLink(v));
