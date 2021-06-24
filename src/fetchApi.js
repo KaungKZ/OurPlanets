@@ -56,15 +56,15 @@ export function fetchApi(_planet, planet) {
 
       planetSummarySource.href = data[0].query.pages[0].fullurl;
 
-      // document.body.style.height = "initial";
-      // document.body.style.display = "initial";
-      // document.body.style.flexDirection = "column";
+      document.body.style.height = "initial";
+      document.body.style.display = "initial";
+      document.body.style.flexDirection = "column";
 
-      // loader.style.display = "none";
-      // loader.style.pointerEvents = "none";
+      loader.style.display = "none";
+      loader.style.pointerEvents = "none";
 
-      // planetSummarySection.style.display = "block";
-      // planetDetailSection.style.display = "block";
+      planetSummarySection.style.display = "block";
+      planetDetailSection.style.display = "block";
 
       planetValues.Summary = summary;
       planetValues.InternalStructure = internalStructureText;

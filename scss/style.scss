@@ -27,13 +27,7 @@ body {
   pointer-events: all;
   flex: 1;
 
-  &__title {
-    font-family: $title-font-secondary;
-    color: $light-text-color;
-    font-weight: 700;
-    display: flex;
-    align-items: baseline;
-
+  &__dot {
     .dot-pulse {
       margin-left: 20px;
       position: relative;
@@ -409,7 +403,7 @@ body {
 
 @media (max-width: 575.98px) {
   .loader {
-    &__title {
+    &__dot {
       .dot-pulse,
       .dot-pulse::before,
       .dot-pulse::after {
@@ -451,7 +445,7 @@ body {
 
 @media (max-width: 400px) {
   .loader {
-    &__title {
+    &__dot {
       .dot-pulse,
       .dot-pulse::before,
       .dot-pulse::after {
