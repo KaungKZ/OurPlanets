@@ -15,8 +15,9 @@ body {
   }
 }
 
+// =================== loader ========================
+
 .loader {
-  font-family: $title-font-secondary;
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -26,13 +27,99 @@ body {
   pointer-events: all;
   flex: 1;
 
-  color: $light-text-color;
+  &__title {
+    font-family: $title-font-secondary;
+    color: $light-text-color;
+    font-weight: 700;
+    display: flex;
+    align-items: baseline;
+
+    .dot-pulse {
+      margin-left: 20px;
+      position: relative;
+      left: -9999px;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background-color: #f5f6f7;
+      color: #f5f6f7;
+      box-shadow: 9999px 0 0 -5px #f5f6f7;
+      animation: dotPulse 1.5s infinite linear;
+      animation-delay: 0.25s;
+    }
+
+    .dot-pulse::before,
+    .dot-pulse::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background-color: #f5f6f7;
+      color: #f5f6f7;
+    }
+
+    .dot-pulse::before {
+      box-shadow: 9984px 0 0 -5px #f5f6f7;
+      animation: dotPulseBefore 1.5s infinite linear;
+      animation-delay: 0s;
+    }
+
+    .dot-pulse::after {
+      box-shadow: 10014px 0 0 -5px #f5f6f7;
+      animation: dotPulseAfter 1.5s infinite linear;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes dotPulseBefore {
+      0% {
+        box-shadow: 9984px 0 0 -5px #f5f6f7;
+      }
+      30% {
+        box-shadow: 9984px 0 0 2px #f5f6f7;
+      }
+      60%,
+      100% {
+        box-shadow: 9984px 0 0 -5px #f5f6f7;
+      }
+    }
+
+    @keyframes dotPulse {
+      0% {
+        box-shadow: 9999px 0 0 -5px #f5f6f7;
+      }
+      30% {
+        box-shadow: 9999px 0 0 2px #f5f6f7;
+      }
+      60%,
+      100% {
+        box-shadow: 9999px 0 0 -5px #f5f6f7;
+      }
+    }
+
+    @keyframes dotPulseAfter {
+      0% {
+        box-shadow: 10014px 0 0 -5px #f5f6f7;
+      }
+      30% {
+        box-shadow: 10014px 0 0 2px #f5f6f7;
+      }
+      60%,
+      100% {
+        box-shadow: 10014px 0 0 -5px #f5f6f7;
+      }
+    }
+  }
 
   &.hide {
     pointer-events: none;
     display: none;
   }
 }
+
+// =================== navbar ========================
 
 .navbar {
   .nav-item {
@@ -89,6 +176,8 @@ body {
   display: block;
   margin: 0;
 }
+
+// =================== planet-summary ========================
 
 .planet-summary {
   margin: 80px auto 100px auto;
@@ -148,6 +237,8 @@ body {
   }
 }
 
+// =================== planet-detail ========================
+
 .planet-detail {
   &__wrapper {
     border: 1px solid rgba(45, 102, 240, 0.2);
@@ -166,6 +257,8 @@ body {
     color: $light-text-color;
   }
 }
+
+// =================== media queries ========================
 
 @media (max-width: 1199.98px) {
   .planet-summary {
@@ -315,6 +408,16 @@ body {
 }
 
 @media (max-width: 575.98px) {
+  .loader {
+    &__title {
+      .dot-pulse,
+      .dot-pulse::before,
+      .dot-pulse::after {
+        width: 8px;
+        height: 8px;
+      }
+    }
+  }
   .planet-summary {
     padding-top: 100px;
 
@@ -347,6 +450,21 @@ body {
 }
 
 @media (max-width: 400px) {
+  .loader {
+    &__title {
+      .dot-pulse,
+      .dot-pulse::before,
+      .dot-pulse::after {
+        width: 6px;
+        height: 6px;
+      }
+    }
+
+    &__icon {
+      width: 125px !important;
+      height: 125px !important;
+    }
+  }
   .navbar {
     .navbar-collapse {
       margin-top: 1rem;
